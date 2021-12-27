@@ -1,0 +1,37 @@
+package mediaAluno;
+
+import java.util.Scanner;
+public class mediaAluno {
+
+    public static void main(String[] args) {
+        String nomeAluno[] = new String[50];
+        double nota1[] = new double[50];
+        double nota2[] = new double[50];
+        double mediaAluno[] = new double[50];
+    System.out.println("Desempenho da turma");
+        preencheDados(nomeAluno, nota1, nota2, mediaAluno);
+        exibeMedias(nomeAluno, mediaAluno);
+    System.out.println(" ");      
+    }   
+public static void preencheDados(String vet1[], double vet2[],
+double vet3[], double vet4[]) {
+Scanner in = new Scanner(System.in);
+for (int i = 0; i <= vet1.length - 1; i++) {
+System.out.println("Dados do Aluno(a) " + (i + 1));
+System.out.print("Nome: ");
+vet1[i] = in.nextLine();
+System.out.print("Primeira nota: ");
+vet2[i] = in.nextDouble();
+in.nextLine();
+System.out.print("Segunda nota: ");
+vet3[i] = in.nextDouble();
+in.nextLine();
+vet4[i] = (vet2[i] * 2 + vet3[i] * 3) / 5;
+}
+}
+public static void exibeMedias(String nome[], double media[]) {
+for (int i = 0; i <= nome.length - 1; i++) {
+System.out.println("O aluno(a) " + nome[i] + " obteve"
++ " média " + media[i]);
+}
+}
